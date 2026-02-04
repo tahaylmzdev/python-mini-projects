@@ -6,6 +6,7 @@ def main():
     op = get_operator()
     num2 = get_second_number()
     calculator(num1, op, num2)
+    new_cal()
 
 def get_first_number():
     try:
@@ -16,7 +17,7 @@ def get_first_number():
         return get_first_number()
 
 def get_operator():
-    op = input("Please enter the operator you would like to do ? (+, -, *, /")
+    op = input("Please enter the operator you would like to do ? (+, -, *, /): ")
 
     if op in ["+", "-", "*", "/"]:
         return op
@@ -52,10 +53,16 @@ def calculator(num1, op, num2):
 def new_cal():
     again = input("Would like to make another calculation ? (y/n)")
     if again in ["y", "n"]:
-        print("""Sure, there you go!
+        match again:
+            case "y":
+                print("""Sure, there you go!
         
-        """)
-        return get_first_number()
+                """)
+                return main()
+            case "n":
+                print("""----------------------------
+                Good Bye!
+                ----------------------------""")
     else:
         print("Please enter valid input")
         return new_cal()
