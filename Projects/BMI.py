@@ -59,3 +59,6 @@ def again():
     else:
         print("Please enter valid data")
         return again()
+
+if __name__ == "__main__":
+    main()
