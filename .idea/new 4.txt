@@ -1,0 +1,4 @@
+A)
+1 <iostream>
+2 
+std::cin >> age;
